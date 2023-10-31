@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine, text
 import os
 
-db_connection_url = os.getenv('DATABASE_CONNECTION_URL_STRING')
+db_connection_url = os.environ['DATABASE_CONNECTION_URL_STRING']
 engine = create_engine(db_connection_url)
 
 def load_jobs_from_db():
