@@ -25,6 +25,13 @@ def show_job(id):
 @app.route("/job/<id>/apply", methods=['post'])
 def apply_to_job(id):
   # data = request.args # request.args get the data from the url when the data is sent in the url without using post method.
+  # token = request.POST[`"h-captcha-response"]
+  # params = {
+  #  "secret": "ES_d6e44e13476549f786ff01d4f38461f4",
+  #  "response": token
+  # }
+  # json = http.POST("https://hcaptcha.com/siteverify", params)
+
   data = request.form   # request.form will get data from when it is sended using post method.
   job = load_job_from_db(id)
   add_application_to_db(id, data)
